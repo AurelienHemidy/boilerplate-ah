@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 4000px;
+}
+
+img {
+    background: #F1F1FA;
+    width: 400px;
+    height: 300px;
+    display: block;
+    margin: 10px auto;
+    border: 0;
+}
+
+.page {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+}
