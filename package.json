@@ -25,6 +25,7 @@
     "webpack-merge": "^5.7.3"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.16.5",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0"
   }

@@ -36,6 +36,10 @@ class App {
         this.setupResources();
         this.setupEventListeners();
         this.loadResources();
+
+        setTimeout(() => {
+            document.querySelector('#page1 h1').innerText = "BANANE"
+        }, 5000);
     }
 
     registerLoaders() {
@@ -61,9 +65,10 @@ class App {
 
     _loadResourcesCompleteHandler(e) {
         // console.log("loaded");
-        // console.log(e)
         this.datas = e;
         this.loaderUI.toggleLoader();
+
+        console.log(this._resourceLoader.get('Duck'))
     }
 
     _bindAll() {
@@ -71,7 +76,6 @@ class App {
     }
 
     _loadResourcesProgressHandler(e) {
-        // console.log(Math.round(e * 100))
         this.loaderUI.setLoaderProgress(Math.round(e * 100));
     }
 

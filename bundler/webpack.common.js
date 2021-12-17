@@ -21,7 +21,50 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, '../src/index.html'),
             minify: true,
-            favicon: path.resolve(__dirname, '../static/icons/favicon/favicon.png')
+            favicon: path.resolve(__dirname, '../static/icons/favicon/favicon.png'),
+            meta: {
+                description: {
+                    name: "description",
+                    content: "This a small boilerplate to start projects"
+                },
+                og_title: {
+                    property: "og:type",
+                    content: "website"
+                },
+                og_description: {
+                    property: "og:description",
+                    content: "This a small boilerplate to start projects"
+                },
+                og_url: {
+                    property: "og:url",
+                    content: "http://localhost:8080"
+                },
+                og_image: {
+                    property: "og:image",
+                    content: path.resolve(__dirname, '../static/icons/favicon/favicon.png')
+                },
+                og_site_name: {
+                    property: "og:site_name",
+                    content: "Boilerplate - AH"
+                },
+                twitter_card: {
+                    property: "twitter:card",
+                    content: "summary"
+                },
+                twitter_creator: {
+                    property: "twitter:creator",
+                    content: "Aurélien Hémidy"
+                },
+                twitter_title: {
+                    property: "twitter:title",
+                    content: "Boilerplate - AH"
+                },
+                twitter_description: {
+                    property: "twitter:description",
+                    content: "This a small boilerplate to start projects"
+                },
+
+            }
         }),
         new MiniCSSExtractPlugin()
     ],

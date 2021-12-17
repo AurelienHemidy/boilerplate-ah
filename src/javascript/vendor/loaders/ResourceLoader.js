@@ -16,6 +16,8 @@ class ResourceLoader extends EventDispatcher {
         this._bindAll();
     }
 
+    // static cacheBis = [];
+
     getRessources() {
         return this.resources;
     }
@@ -97,6 +99,23 @@ class ResourceLoader extends EventDispatcher {
         });
 
         return promise;
+    }
+
+    get(resourceName) {
+        const resource = this.getResourceByName(resourceName);
+        return resource.data;
+    } 
+
+    getResourceByName(name) {
+        // console.log(this.cache)
+        // Retrieve resource in the cache
+        for (let i = 0, len = this.cache.length; i < len; i++) {
+            if (this.cache[i].name === name) {
+                return this.cache[i];
+            }
+        }
+
+        throw new Error(`Resource Loader: Resource with name '${name}' was not found`);
     }
 
     _bindAll() {
