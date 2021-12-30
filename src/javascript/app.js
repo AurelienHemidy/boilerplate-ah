@@ -21,12 +21,18 @@ import globalResources from '../../static/datas/globalResources';
 // Utils
 import bindAll from "./utils/bindAll";
 
+// Animation
+import ScrollAnimator from './vendor/scrollAnimator/scrollAnimator';
+import OnScrollAnimator from './vendor/scrollAnimator/onScrollAnimator';
+
 class App {
     constructor() {
         this._resourceLoader = new ResourceLoader();
         this.loaderUI = new LoaderUI("loader");
         this._lazyLoader = new LazyLoader();
         this._pageManager = new PageManager();
+        this._scrollAnimator = new ScrollAnimator();
+        // this._onScrollAnimator = new OnScrollAnimator();
 
         this.datas = null;
 
@@ -40,6 +46,16 @@ class App {
         setTimeout(() => {
             document.querySelector('#page1 h1').innerText = "BANANE"
         }, 5000);
+
+        
+
+        // this._onScrollAnimator.add(".scroll-container", 200, 300);
+
+        // this._onScrollAnimator.setup();
+
+        this._scrollAnimator.createObserver();
+        this._scrollAnimator.add({ elementToAnimate: ".scroll-container" });
+
     }
 
     registerLoaders() {
@@ -68,7 +84,7 @@ class App {
         this.datas = e;
         this.loaderUI.toggleLoader();
 
-        console.log(this._resourceLoader.get('Duck'))
+        // console.log(this._resourceLoader.get('Duck'))
     }
 
     _bindAll() {

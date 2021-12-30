@@ -25,3 +25,27 @@ img {
 
     width: 100%;
 }
+
+.scroll-container {
+    height: calc(150vh + 100px);
+
+    background-color: black;
+
+    position: relative;
+
+    .animated-box {
+        height: 100px;
+        width: 100px;
+
+        position: absolute;
+
+        top: 0;
+        left: 50px;
+
+        background-color: brown;
+    }
+}
+
+.test {
+    height: 200vh;
+}
